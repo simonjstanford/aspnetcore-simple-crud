@@ -10,6 +10,6 @@ namespace SimpleCrudSite.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public IList<Product> Products { get; set; } = new List<Product>();
-        public bool CanBeRemoved => Products.Any();
+        public bool CanBeRemoved => Products.Count == 0;
     }
 }

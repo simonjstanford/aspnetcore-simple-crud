@@ -1,0 +1,39 @@
+﻿@model List<ProductType>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All Product Types</h2>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Product Count</th>
+        <th>Products</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var item in Model) {
+    <tr>
+        <td>@item.ID</td>
+        <td>@item.Name</td>
+        <td>@item.Products.Count</td>
+        <td>@Html.ActionLink("Products", "IndexByTypeID", "Product", new { id = item.ID })</td>
+        <td>@Html.ActionLink("Edit", "Edit", new { id = item.ID })</td>
+        <td>
+            @if (item.CanBeRemoved)
+            {
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            }
+            else
+            {
+                <span>--</span>
+            }
+        </td>
+    </tr>
+    }
+</table>
+@Html.ActionLink("Add a new product type", "Create")
