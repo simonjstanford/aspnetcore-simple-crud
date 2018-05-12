@@ -1,0 +1,16 @@
+﻿<html>
+<head>
+    <title></title>
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    @Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" }) | 
+    @Html.ActionLink("Products", "Index", "Product", new { @class = "nav-link" }) | 
+    @Html.ActionLink("Types", "Index", "ProductType", new { @class = "nav-link" })
+
+    <hr />
+    @RenderBody()
+    <hr />
+    Welcome to My Website! (@DateTime.Now)
+</body>
+</html>
