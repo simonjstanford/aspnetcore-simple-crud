@@ -1,0 +1,12 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create Product</h1>
+
+@using (Html.BeginForm()) {
+    @Html.Partial("ProductDetails")
+    <input type="submit" value="Create" />    
+}

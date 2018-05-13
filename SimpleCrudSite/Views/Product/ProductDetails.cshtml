@@ -1,0 +1,16 @@
+﻿@model Product
+
+<table>
+    <tr>
+        <td>@Html.LabelFor(p => p.Name)</td>
+        <td>@Html.TextBoxFor(p => p.Name)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(p => p.Price)</td>
+        <td>@Html.TextBoxFor(p => p.Price)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(p => p.Type)</td>
+        <td>@Html.DropDownListFor(p => p.TypeID, new SelectList(DataSource.GetProductTypes(), "ID", "Name"))</td>
+    </tr>
+</table>

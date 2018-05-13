@@ -1,0 +1,28 @@
+﻿@model Product  
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Product Detail</h1>
+
+<table>
+    <tr>
+        <td>@Html.DisplayNameFor(p => p.ID)</td>
+        <td>@Html.DisplayFor(p => p.ID)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(p => p.Name)</td>
+        <td>@Html.DisplayFor(p => p.Name)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(p => p.Price)</td>
+        <td>@Html.DisplayFor(p => p.Price)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(p => p.Type.Name)</td>
+        <td>@Html.ActionLink(Model.Type.Name, "IndexByTypeID", new { id = Model.TypeID})</td>
+    </tr>
+</table>
+
